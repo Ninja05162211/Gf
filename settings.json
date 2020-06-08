@@ -1,0 +1,62 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2000,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "tslint.typeCheck": true,
+  "tslint.autoFixOnSave": true,
+  "[javascript]": {},
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue",
+  ],
+  "eslint.options": {
+    "plugins": [
+      "html"
+    ]
+  },
+  "explorer.confirmDelete": false,
+  "[markdown]": {},
+  "files.associations": {
+    "*.html": "html",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.vue": "vue",
+    "*.htm": "html",
+    "*.tsx": "typescriptreact"
+  },
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "[typescript]": {},
+  "dart.flutterSdkPath": "/Users/shiyun/prj/flutter",
+  "git.autofetch": true,
+  "editor.formatOnSaveTimeout": 1500,
+  "editor.formatOnType": true,
+  "window.zoomLevel": 0,
+  "less.compile": {
+    "out": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "terminal.integrated.shell.osx": "/bin/bash",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "sync.gist": "1344400"
+}
