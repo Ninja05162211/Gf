@@ -39,11 +39,9 @@
   },
   "minapp-vscode.disableAutoConfig": true,
   "[typescript]": {},
-  "dart.flutterSdkPath": "/Users/shiyun/prj/flutter",
   "git.autofetch": true,
   "editor.formatOnSaveTimeout": 1500,
   "editor.formatOnType": true,
-  "window.zoomLevel": 0,
   "less.compile": {
     "out": false
   },
