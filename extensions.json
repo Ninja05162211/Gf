@@ -17,7 +17,7 @@
     },
     "name": "auto-close-tag",
     "publisher": "formulahendry",
-    "version": "0.5.11"
+    "version": "0.5.12"
   },
   {
     "metadata": {
@@ -37,7 +37,7 @@
     },
     "name": "auto-rename-tag",
     "publisher": "formulahendry",
-    "version": "0.1.7"
+    "version": "0.1.8"
   },
   {
     "metadata": {
@@ -97,7 +97,7 @@
     },
     "name": "csharp",
     "publisher": "ms-dotnettools",
-    "version": "1.23.13"
+    "version": "1.23.14"
   },
   {
     "metadata": {
@@ -141,6 +141,16 @@
   },
   {
     "metadata": {
+      "id": "a295e7f1-e80e-454e-8eee-36b9bc4cee96",
+      "publisherId": "yunfeizuo.easy-wxless",
+      "publisherDisplayName": "yunfeizuo"
+    },
+    "name": "easy-wxless",
+    "publisher": "yunfeizuo",
+    "version": "1.4.0"
+  },
+  {
+    "metadata": {
       "id": "274a34dc-5589-44f3-b3cb-b15d8e002ce4",
       "publisherId": "atian25.eggjs",
       "publisherDisplayName": "atian25"
@@ -177,7 +187,7 @@
     },
     "name": "githistory",
     "publisher": "donjayamanne",
-    "version": "0.6.17"
+    "version": "0.6.18"
   },
   {
     "metadata": {
@@ -207,7 +217,7 @@
     },
     "name": "iceworks-app",
     "publisher": "iceworks-team",
-    "version": "1.0.3"
+    "version": "1.0.5"
   },
   {
     "metadata": {
@@ -237,7 +247,7 @@
     },
     "name": "iceworks-doctor",
     "publisher": "iceworks-team",
-    "version": "1.1.2"
+    "version": "1.1.4"
   },
   {
     "metadata": {
@@ -247,7 +257,7 @@
     },
     "name": "iceworks-material-helper",
     "publisher": "iceworks-team",
-    "version": "1.0.7"
+    "version": "1.0.8"
   },
   {
     "metadata": {
@@ -257,7 +267,7 @@
     },
     "name": "iceworks-project-creator",
     "publisher": "iceworks-team",
-    "version": "1.0.3"
+    "version": "1.0.4"
   },
   {
     "metadata": {

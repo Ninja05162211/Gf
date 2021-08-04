@@ -95,5 +95,8 @@
   },
   "[less]": {
     "editor.defaultFormatter": "michelemelluso.code-beautifier"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "michelemelluso.code-beautifier"
   }
 }
