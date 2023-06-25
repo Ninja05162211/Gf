@@ -1,0 +1,10 @@
+{
+  "type": "chrome",
+  "request": "launch",
+  "name": "Chrome",
+  "url": "http://localhost:3000/",
+  "webRoot": "${workspaceRoot}/src",
+  "sourceMaps": true,
+  "userDataDir": "${workspaceRoot}/.vscode/chrome",
+  "trace": true
+}

@@ -1,0 +1,111 @@
+{
+  "name": "bondfix",
+  "version": "0.0.1",
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@vant/touch-emulator": "^1.2.0",
+    "axios": "^0.21.1",
+    "js-md5": "^0.7.3",
+    "lgutils": "^1.2.26",
+    "nprogress": "^0.2.0",
+    "qs": "^6.9.6",
+    "swiper": "^6.7.0",
+    "vant": "^3.0.15",
+    "vue": "^3.0.11",
+    "vue-router": "^4.0.6",
+    "vuex": "4.0.0"
+  },
+  "scripts": {
+    "start": "vite --host",
+    "build:test": "vite build --mode test",
+    "build:web": "vite build --mode production",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --win --x64",
+    "build:mac": "electron-builder --mac",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
+    "electron": "wait-on tcp:3000 && electron ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "build": {
+    "productName": "electron桌面端",
+    "appId": "com.demo.electron",
+    "copyright": "© demo",
+    "directories": {
+      "buildResources": "public",
+      "output": "out"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "public/favicon.ico",
+      "installerHeaderIcon": "public/favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "build/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "icon": "./public/favicon.png",
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    },
+    "win": {
+      "icon": "./public/favicon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/user-event": "^12.1.10",
+    "@types/js-md5": "^0.4.2",
+    "@types/nprogress": "^0.2.0",
+    "@vitejs/plugin-legacy": "^1.3.2",
+    "@vitejs/plugin-vue": "^1.2.2",
+    "@vue/compiler-sfc": "^3.0.11",
+    "less": "^4.1.1",
+    "less-loader": "^8.0.0",
+    "process": "^0.11.10",
+    "rollup-plugin-copy": "^3.4.0",
+    "typescript": "^4.2.4",
+    "vite": "^2.2.3",
+    "vite-plugin-compression": "^0.2.4",
+    "vite-plugin-html": "^2.0.7",
+    "vite-plugin-pwa": "^0.7.3",
+    "vite-plugin-style-import": "^0.10.0",
+    "vue-tsc": "^0.1.2"
+    "concurrently": "^6.0.0",
+    "wait-on": "^5.2.1",
+    "electron-is-dev": "^2.0.0",
+    "electron": "^17.1.0",
+    "electron-builder": "^22.14.13"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/active2/active2",
+    "pages/activity/activity",
+    "pages/myorder/myorder",
+    "pages/my/my",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/selectCity/selectCity",
+    "pages/dateview/dateview",
+    "pages/order/order",
+    "pages/selecttraveller/selecttraveller",
+    "pages/addtraveller/addtraveller",
+    "pages/address/address",
+    "pages/feedback/feedback",
+    "pages/contact/contact",
+    "pages/login/login",
+    "pages/mycollect/mycollect",
+    "pages/mymessage/mymessage",
+    "pages/realname/realname",
+    "pages/mymoney/mymoney",
+    "pages/qrcode/qrcode",
+    "pages/vipbuy/vipbuy",
+    "pages/activitydetail/activitydetail",
+    "pages/myorderdetail/myorderdetail",
+    "pages/mycash/mycash",
+    "pages/myfriend/myfriend",
+    "pages/mycommission/mycommission",
+    "pages/gocash/gocash",
+    "pages/activitypage/activitypage",
+    "pages/mycoupon/mycoupon",
+    "pages/selectcoupon/selectcoupon",
+    "pages/productcomment/productcomment"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fcd132",
+    "navigationBarTitleText": "乐羽旅游",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取用户所在城市信息"
+    }
+  },
+  "requiredPrivateInfos": ["chooseLocation", "chooseAddress"],
+
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#000",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar_1.png",
+        "selectedIconPath": "images/tabbar_1_.png"
+      },
+      {
+        "pagePath": "pages/activitypage/activitypage",
+        "text": "活动",
+        "iconPath": "images/tabbar_2.png",
+        "selectedIconPath": "images/tabbar_2_.png"
+      },
+      {
+        "pagePath": "pages/myorder/myorder",
+        "text": "订单",
+        "iconPath": "images/tabbar_3.png",
+        "selectedIconPath": "images/tabbar_3_.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tabbar_4.png",
+        "selectedIconPath": "images/tabbar_4_.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

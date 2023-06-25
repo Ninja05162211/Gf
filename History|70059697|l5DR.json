@@ -1,0 +1,3613 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API模块",
+    "version": "2.0",
+    "title": "债券二级撮合外脑系统",
+    "contact": {
+      "name": "金子"
+    },
+    "license": {}
+  },
+  "host": "bond-matching-ext.devn.chinacsci.com",
+  "basePath": "/bond",
+  "tags": [
+    {
+      "name": "债券画像相关接口",
+      "description": "Bm Bond Basic Info Controller"
+    },
+    {
+      "name": "字典管理",
+      "description": "Dict Controller"
+    },
+    {
+      "name": "客户公司|客户部门|客户人员信息相关接口",
+      "description": "Bm Customer Org Controller"
+    },
+    {
+      "name": "客户画像相关接口",
+      "description": "Bm Customer Interest Quote Controller"
+    },
+    {
+      "name": "推送管理",
+      "description": "Bm Push Controller"
+    },
+    {
+      "name": "缓存刷新",
+      "description": "Refush Cache Controller"
+    },
+    {
+      "name": "资讯舆情管理",
+      "description": "Bm News Controller"
+    }
+  ],
+  "paths": {
+    "/bond/basicInfo/detail": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "查询债券基本信息",
+        "operationId": "detailUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bmBondBasicInfoDetailQueryRequest",
+            "description": "bmBondBasicInfoDetailQueryRequest",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondBasicInfoDetailQueryRequest",
+              "$ref": "#/definitions/BmBondBasicInfoDetailQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmBondBasicInfoVo»",
+              "$ref": "#/definitions/ResponseVo«BmBondBasicInfoVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/bond/chart/bestBid": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "债券买入报价价曲线",
+        "operationId": "bestBidUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondBestPriceChartRequest",
+              "$ref": "#/definitions/BmBondBestPriceChartRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmBondBestPriceChartVo»",
+              "$ref": "#/definitions/ResponseVo«BmBondBestPriceChartVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/bond/chart/bestOfr": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "债券卖出报价价曲线",
+        "operationId": "bestOfrUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondBestPriceChartRequest",
+              "$ref": "#/definitions/BmBondBestPriceChartRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmBondBestPriceChartVo»",
+              "$ref": "#/definitions/ResponseVo«BmBondBestPriceChartVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/cache/refreshCache/{pattern}": {
+      "get": {
+        "tags": ["缓存刷新"],
+        "summary": "刷新缓存",
+        "description": "刷新缓存pattern dev:*xx*",
+        "operationId": "refreshCacheUsingGET",
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "name": "pattern",
+            "in": "path",
+            "description": "pattern",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/companyInfo/detail": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "查询债券主体信息",
+        "operationId": "detailUsingPOST_1",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bmBondCompanyInfoDetailQueryRequest",
+            "description": "bmBondCompanyInfoDetailQueryRequest",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondCompanyInfoDetailQueryRequest",
+              "$ref": "#/definitions/BmBondCompanyInfoDetailQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmBondCompanyInfoVo»",
+              "$ref": "#/definitions/ResponseVo«BmBondCompanyInfoVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/company/list": {
+      "get": {
+        "tags": ["客户公司|客户部门|客户人员信息相关接口"],
+        "summary": "查询客户公司列表",
+        "operationId": "listCompanyUsingGET",
+        "produces": ["*/*"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«List«BmCustomerCompanyVo»»",
+              "$ref": "#/definitions/ResponseVo«List«BmCustomerCompanyVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/company/{companySerialNo}": {
+      "get": {
+        "tags": ["客户公司|客户部门|客户人员信息相关接口"],
+        "summary": "查询客户公司",
+        "operationId": "companyUsingGET",
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "name": "companySerialNo",
+            "in": "path",
+            "description": "公司编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmCustomerCompanyVo»",
+              "$ref": "#/definitions/ResponseVo«BmCustomerCompanyVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/company/{companySerialNo}/dept/list": {
+      "get": {
+        "tags": ["客户公司|客户部门|客户人员信息相关接口"],
+        "summary": "查询客户公司的部门列表",
+        "operationId": "listDeptUsingGET",
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "name": "companySerialNo",
+            "in": "path",
+            "description": "公司编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«List«BmCustomerDeptVo»»",
+              "$ref": "#/definitions/ResponseVo«List«BmCustomerDeptVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/dept/{deptSerialNo}": {
+      "get": {
+        "tags": ["客户公司|客户部门|客户人员信息相关接口"],
+        "summary": "查询客户部门",
+        "operationId": "deptUsingGET",
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "name": "deptSerialNo",
+            "in": "path",
+            "description": "部门编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmCustomerDeptVo»",
+              "$ref": "#/definitions/ResponseVo«BmCustomerDeptVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/dept/{deptSerialNo}/cust/list": {
+      "get": {
+        "tags": ["客户公司|客户部门|客户人员信息相关接口"],
+        "summary": "查询客户部门的人员列表",
+        "operationId": "listCustomerUsingGET",
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "name": "deptSerialNo",
+            "in": "path",
+            "description": "部门编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«List«BmCustomerVo»»",
+              "$ref": "#/definitions/ResponseVo«List«BmCustomerVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/interestQuote/list": {
+      "post": {
+        "tags": ["客户画像相关接口"],
+        "summary": "查询客户感兴趣的报价列表",
+        "operationId": "listUsingPOST_1",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmCustomerPageListQueryRequest",
+              "$ref": "#/definitions/BmCustomerPageListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«BmCustomerInterestQuoteVo»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«BmCustomerInterestQuoteVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/saleEvent/list": {
+      "post": {
+        "tags": ["客户画像相关接口"],
+        "summary": "查询客户销售事件列表",
+        "operationId": "listUsingPOST_2",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmCustomerPageListQueryRequest",
+              "$ref": "#/definitions/BmCustomerPageListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«Map«string,object»»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«Map«string,object»»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/taste/list": {
+      "post": {
+        "tags": ["客户画像相关接口"],
+        "summary": "客户偏好分析 客户持仓空间分析-统计表",
+        "operationId": "listUsingPOST_3",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmCustomerPageListQueryRequest",
+              "$ref": "#/definitions/BmCustomerPageListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmCustomerTasteVo»",
+              "$ref": "#/definitions/ResponseVo«BmCustomerTasteVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/tasteChart/chart1": {
+      "post": {
+        "tags": ["客户画像相关接口"],
+        "summary": "客户偏好分析（三维散点图）",
+        "operationId": "chart1UsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmCustomerTasteChartQueryRequest",
+              "$ref": "#/definitions/BmCustomerTasteChartQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmCustomerTasteScatterChartVo»",
+              "$ref": "#/definitions/ResponseVo«BmCustomerTasteScatterChartVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/tasteChart/chart2": {
+      "post": {
+        "tags": ["客户画像相关接口"],
+        "summary": "客户持仓空间分析（单轴散点图）",
+        "operationId": "chart2UsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmCustomerTasteChartQueryRequest",
+              "$ref": "#/definitions/BmCustomerTasteChartQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmCustomerTasteSpaceChartVo»",
+              "$ref": "#/definitions/ResponseVo«BmCustomerTasteSpaceChartVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/tradeInfo/list": {
+      "post": {
+        "tags": ["客户画像相关接口"],
+        "summary": "查询客户债券交易信息列表",
+        "operationId": "listUsingPOST_4",
+        "consumes": ["application/json"],
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmCustomerTradeInfoQueryRequest",
+              "$ref": "#/definitions/BmCustomerTradeInfoQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«BmCustomerTradeInfoVo»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«BmCustomerTradeInfoVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/customer/{custSerialNo}": {
+      "get": {
+        "tags": ["客户公司|客户部门|客户人员信息相关接口"],
+        "summary": "查询客户人员",
+        "operationId": "customerUsingGET",
+        "produces": ["*/*"],
+        "parameters": [
+          {
+            "name": "custSerialNo",
+            "in": "path",
+            "description": "客户编号",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmCustomerVo»",
+              "$ref": "#/definitions/ResponseVo«BmCustomerVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/dict/list/{key}": {
+      "get": {
+        "tags": ["字典管理"],
+        "summary": "根据key查看字典列表",
+        "description": "字典缓存查看：如key为bondType",
+        "operationId": "getCacheUsingGET",
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "description": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«List«CrSelectParmBo»»",
+              "$ref": "#/definitions/ResponseVo«List«CrSelectParmBo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/news/pageList": {
+      "post": {
+        "tags": ["资讯舆情管理"],
+        "summary": "查询资讯列表-分页",
+        "operationId": "pageListUsingPOST_2",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "json格式{\"filter\":{},\"page\":1,\"size\":10}",
+            "required": false,
+            "schema": {
+              "originalRef": "查询条件关系：或",
+              "$ref": "#/definitions/查询条件关系：或"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«BmBondNewsResultVo»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«BmBondNewsResultVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/offer/pageList": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "查询债券所有报价信息列表-分页，模拟DM/IDB页面",
+        "operationId": "pageListUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bmBondOfferPageListQueryRequest",
+            "description": "bmBondOfferPageListQueryRequest",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondOfferPageListQueryRequest",
+              "$ref": "#/definitions/BmBondOfferPageListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«BmBondOfferInfoVo»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«BmBondOfferInfoVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/offer/recentlyPageList": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "查询债券近期报价信息列表-分页",
+        "operationId": "recentlyPageListUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bmBondOfferRecentlyPageListQueryRequest",
+            "description": "bmBondOfferRecentlyPageListQueryRequest",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondOfferRecentlyPageListQueryRequest",
+              "$ref": "#/definitions/BmBondOfferRecentlyPageListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«BmBondOfferInfoVo»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«BmBondOfferInfoVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/offerPotentialCustomer/pageList": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "查询债券报价潜在客户列表-分页",
+        "operationId": "listUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bBondOfferPotentialCustomerPageListQueryRequest",
+            "description": "bBondOfferPotentialCustomerPageListQueryRequest",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondOfferPotentialCustomerPageListQueryRequest",
+              "$ref": "#/definitions/BmBondOfferPotentialCustomerPageListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«BmBondOfferCustomerRelaVo»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«BmBondOfferCustomerRelaVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/offerSimilar/pageList": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "查询相似债券报价信息列表-分页",
+        "operationId": "pageListUsingPOST_1",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bmBondOfferSimilarPageListQueryRequest",
+            "description": "bmBondOfferSimilarPageListQueryRequest",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondOfferSimilarPageListQueryRequest",
+              "$ref": "#/definitions/BmBondOfferSimilarPageListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«BmBondOfferSimilarVo»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«BmBondOfferSimilarVo»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/priceForecast/detail": {
+      "post": {
+        "tags": ["债券画像相关接口"],
+        "summary": "查询债券价格预测信息",
+        "operationId": "detailUsingPOST_2",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "bmBondPriceForecastDetailQueryRequest",
+            "description": "bmBondPriceForecastDetailQueryRequest",
+            "required": true,
+            "schema": {
+              "originalRef": "BmBondPriceForecastDetailQueryRequest",
+              "$ref": "#/definitions/BmBondPriceForecastDetailQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«BmBondPriceForecastVo»",
+              "$ref": "#/definitions/ResponseVo«BmBondPriceForecastVo»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/push/customerList": {
+      "post": {
+        "tags": ["推送管理"],
+        "summary": "推送结果搜索",
+        "operationId": "listUsingPOST_5",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "request",
+            "required": true,
+            "schema": {
+              "originalRef": "BmPushRcdListQueryRequest",
+              "$ref": "#/definitions/BmPushRcdListQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«DubboPage«推送消息列表»»",
+              "$ref": "#/definitions/ResponseVo«DubboPage«推送消息列表»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/push/infoList": {
+      "get": {
+        "tags": ["推送管理"],
+        "summary": "报价和舆情列表",
+        "operationId": "listUsingGET",
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "name": "pushSerialNo",
+            "in": "query",
+            "description": "pushSerialNo",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«List«推送结果列表»»",
+              "$ref": "#/definitions/ResponseVo«List«推送结果列表»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/push/policies": {
+      "get": {
+        "tags": ["推送管理"],
+        "summary": "我的所有推荐策略",
+        "operationId": "allPolicyUsingGET",
+        "produces": ["application/json;charset=UTF-8"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo«List«债券推荐策略»»",
+              "$ref": "#/definitions/ResponseVo«List«债券推荐策略»»"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/push/policy": {
+      "post": {
+        "tags": ["推送管理"],
+        "summary": "新增/设置推送策略",
+        "operationId": "activePolicyUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "vo",
+            "description": "vo",
+            "required": true,
+            "schema": {
+              "originalRef": "BmPushPolicyCreateVo",
+              "$ref": "#/definitions/BmPushPolicyCreateVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo",
+              "$ref": "#/definitions/ResponseVo"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/bond/push/result": {
+      "post": {
+        "tags": ["推送管理"],
+        "summary": "记录一次推荐的推送结果",
+        "operationId": "pushInfoUsingPOST",
+        "consumes": ["application/json"],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "vo",
+            "description": "vo",
+            "required": true,
+            "schema": {
+              "originalRef": "BmPushRcdCreateVo",
+              "$ref": "#/definitions/BmPushRcdCreateVo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "originalRef": "ResponseVo",
+              "$ref": "#/definitions/ResponseVo"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "BmBondBasicInfoDetailQueryRequest": {
+      "type": "object",
+      "properties": {
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "债券代码"
+        }
+      },
+      "title": "BmBondBasicInfoDetailQueryRequest"
+    },
+    "BmBondBasicInfoVo": {
+      "type": "object",
+      "properties": {
+        "baseInterestRate": {
+          "type": "number",
+          "description": "浮息基准"
+        },
+        "bondCompanySerialNo": {
+          "type": "string",
+          "description": "债券主体唯一编号"
+        },
+        "bondLeftScale": {
+          "type": "number",
+          "description": "剩余规模 单位为元"
+        },
+        "bondLeftTerm": {
+          "type": "string",
+          "description": "剩余期限"
+        },
+        "bondName": {
+          "type": "string",
+          "description": "债券全称"
+        },
+        "bondRating": {
+          "type": "string",
+          "description": "债券评级"
+        },
+        "bondScale": {
+          "type": "number",
+          "description": "债券规模 单位为元"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "bondTermDay": {
+          "type": "string",
+          "description": "债券期限日"
+        },
+        "bondTermMonth": {
+          "type": "string",
+          "description": "债券期限月"
+        },
+        "bondTermType": {
+          "type": "string",
+          "description": "债券期限类型 0-年 1-月 2-日"
+        },
+        "bondTermYear": {
+          "type": "string",
+          "description": "债券期限年 债券期限通常为年，1年 3 年，也有3+2年 5+3年"
+        },
+        "bondType": {
+          "type": "string",
+          "description": "债券种类-编码"
+        },
+        "bondTypeName": {
+          "type": "string",
+          "description": "债券种类-名称"
+        },
+        "circulationMarketName": {
+          "type": "string",
+          "description": "流通市场"
+        },
+        "couponInterestRate": {
+          "type": "number",
+          "description": "票面利率，单位为%"
+        },
+        "crossMarket": {
+          "type": "string",
+          "description": "跨市场"
+        },
+        "currency": {
+          "type": "string",
+          "description": "币种 人民币CNY"
+        },
+        "duration": {
+          "type": "string",
+          "description": "久期"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "到期日"
+        },
+        "exerciseDate": {
+          "type": "string",
+          "description": "行权日"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "唯一编号"
+        },
+        "ifCityInvestmentName": {
+          "type": "string",
+          "description": "是否城投"
+        },
+        "ifRedeemName": {
+          "type": "string",
+          "description": "是否可赎回"
+        },
+        "ifResaleName": {
+          "type": "string",
+          "description": "是否可回售"
+        },
+        "impliedRating": {
+          "type": "string",
+          "description": "隐含评级"
+        },
+        "interestPaymentDate": {
+          "type": "string",
+          "description": "付息日"
+        },
+        "interestPaymentMethodName": {
+          "type": "string",
+          "description": "付息方式"
+        },
+        "interestRateTypeName": {
+          "type": "string",
+          "description": "利率类型"
+        },
+        "issueCouponInterestRate": {
+          "type": "number",
+          "description": "发行票息率"
+        },
+        "issuePrice": {
+          "type": "number",
+          "description": "发行价格"
+        },
+        "leftDuration": {
+          "type": "string",
+          "description": "剩余久期"
+        },
+        "modifiedDuration": {
+          "type": "string",
+          "description": "修正久期"
+        },
+        "newestCouponPrice": {
+          "type": "number",
+          "description": "最新面值"
+        },
+        "onMarketDate": {
+          "type": "string",
+          "description": "上市日"
+        },
+        "pledgedBondCode": {
+          "type": "string",
+          "description": "质押券代码"
+        },
+        "pledgedBondShortName": {
+          "type": "string",
+          "description": "质押券简称"
+        },
+        "principalPaymentMethodName": {
+          "type": "string",
+          "description": "还本方式"
+        },
+        "raisingMethod": {
+          "type": "string",
+          "description": "募集方式-编码，00-公募 01-私募"
+        },
+        "raisingMethodName": {
+          "type": "string",
+          "description": "募集方式-名称，00-公募 01-私募"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "standardCouponConversionRate": {
+          "type": "number",
+          "description": "标准券折算率"
+        }
+      },
+      "title": "BmBondBasicInfoVo"
+    },
+    "BmBondBestPriceChartRequest": {
+      "type": "object",
+      "required": ["beginPriceTime", "bondCode", "endPriceTime"],
+      "properties": {
+        "beginPriceTime": {
+          "type": "string",
+          "description": "查询起始日期yyyy-MM-dd"
+        },
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "endPriceTime": {
+          "type": "string",
+          "description": "查询截止日期yyyy-MM-dd"
+        }
+      },
+      "title": "BmBondBestPriceChartRequest"
+    },
+    "BmBondBestPriceChartVo": {
+      "type": "object",
+      "properties": {
+        "history": {
+          "type": "array",
+          "description": "历史买入/卖出报价",
+          "items": {
+            "originalRef": "Item",
+            "$ref": "#/definitions/Item"
+          }
+        },
+        "predict": {
+          "type": "array",
+          "description": "预测买入/卖出报价",
+          "items": {
+            "originalRef": "Item",
+            "$ref": "#/definitions/Item"
+          }
+        }
+      },
+      "title": "BmBondBestPriceChartVo"
+    },
+    "BmBondCompanyInfoDetailQueryRequest": {
+      "type": "object",
+      "properties": {
+        "serialNo": {
+          "type": "string",
+          "description": "主体唯一编号"
+        }
+      },
+      "title": "BmBondCompanyInfoDetailQueryRequest"
+    },
+    "BmBondCompanyInfoVo": {
+      "type": "object",
+      "properties": {
+        "certNo": {
+          "type": "string"
+        },
+        "companyPropertyName": {
+          "type": "string",
+          "description": "性质"
+        },
+        "companyRating": {
+          "type": "string",
+          "description": "主体评级"
+        },
+        "industryTypeName": {
+          "type": "string",
+          "description": "所属行业"
+        },
+        "name": {
+          "type": "string",
+          "description": "公司名称"
+        },
+        "quantitativeScore": {
+          "type": "string",
+          "description": "量化评分"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "公司唯一编号"
+        }
+      },
+      "title": "BmBondCompanyInfoVo"
+    },
+    "BmBondNewsResultVo": {
+      "type": "object",
+      "properties": {
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "certNo": {
+          "type": "string",
+          "description": "证件号码"
+        },
+        "certType": {
+          "type": "string",
+          "description": "证件类型"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "公司名称"
+        },
+        "companyShortName": {
+          "type": "string",
+          "description": "公司简称"
+        },
+        "content": {
+          "type": "string",
+          "description": "内容"
+        },
+        "newsTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "资讯时间"
+        },
+        "primaryClass": {
+          "type": "string",
+          "description": "一级分类"
+        },
+        "primaryClassName": {
+          "type": "string",
+          "description": "一级分类名称"
+        },
+        "secondClass": {
+          "type": "string",
+          "description": "二级分类"
+        },
+        "secondClassName": {
+          "type": "string",
+          "description": "二级分类名称"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "编号"
+        },
+        "title": {
+          "type": "string",
+          "description": "标题"
+        }
+      },
+      "title": "BmBondNewsResultVo"
+    },
+    "BmBondOfferCustomerRelaVo": {
+      "type": "object",
+      "properties": {
+        "bid": {
+          "type": "number",
+          "description": "bid 买盘价"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "机构名称"
+        },
+        "companySerialNo": {
+          "type": "string",
+          "description": "机构编号"
+        },
+        "custSerialNo": {
+          "type": "string",
+          "description": "客户编号"
+        },
+        "name": {
+          "type": "string",
+          "description": "客户姓名"
+        },
+        "offerSerialNo": {
+          "type": "string",
+          "description": "债券报价唯一编号"
+        },
+        "offerTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "报价时间"
+        },
+        "ofr": {
+          "type": "number",
+          "description": "ofr 卖盘价"
+        },
+        "relatedBonds": {
+          "type": "array",
+          "description": "相关债券",
+          "items": {
+            "originalRef": "BmBondTmpVo",
+            "$ref": "#/definitions/BmBondTmpVo"
+          }
+        },
+        "relatedStrenth": {
+          "type": "string",
+          "description": "潜在强度描述"
+        },
+        "score": {
+          "type": "number",
+          "description": "评分"
+        },
+        "wxid": {
+          "type": "string",
+          "description": "微信ID"
+        }
+      },
+      "title": "BmBondOfferCustomerRelaVo"
+    },
+    "BmBondOfferInfoVo": {
+      "type": "object",
+      "properties": {
+        "bid": {
+          "type": "number",
+          "description": "bid 买盘价"
+        },
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "bondRating": {
+          "type": "string",
+          "description": "债券评级"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "broker": {
+          "type": "string",
+          "description": "broker 中介交易员-名称"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "机构名称"
+        },
+        "name": {
+          "type": "string",
+          "description": "客户姓名 报价人姓名"
+        },
+        "offerTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "报价时间"
+        },
+        "ofr": {
+          "type": "number",
+          "description": "ofr 卖盘价"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "报价唯一编号"
+        }
+      },
+      "title": "BmBondOfferInfoVo"
+    },
+    "BmBondOfferPageListQueryRequest": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "BmBondOfferPageListQueryRequest"
+    },
+    "BmBondOfferPotentialCustomerPageListQueryRequest": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "offerSerialNo": {
+          "type": "string",
+          "description": "债券报价唯一编号"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "BmBondOfferPotentialCustomerPageListQueryRequest"
+    },
+    "BmBondOfferRecentlyPageListQueryRequest": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "beginOfferTime": {
+          "type": "string",
+          "description": "债券报价开始时间，格式为yyyy-MM-dd"
+        },
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "endOfferTime": {
+          "type": "string",
+          "description": "债券报价结束时间，格式为yyyy-MM-dd"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "BmBondOfferRecentlyPageListQueryRequest"
+    },
+    "BmBondOfferSimilarPageListQueryRequest": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "offerSerialNo": {
+          "type": "string",
+          "description": "债券报价的编号"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "BmBondOfferSimilarPageListQueryRequest"
+    },
+    "BmBondOfferSimilarVo": {
+      "type": "object",
+      "properties": {
+        "bid": {
+          "type": "number",
+          "description": "bid 买盘价"
+        },
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "bondRating": {
+          "type": "string",
+          "description": "债券评级"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "broker": {
+          "type": "string",
+          "description": "broker 中介交易员-名称"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "机构名称"
+        },
+        "name": {
+          "type": "string",
+          "description": "客户姓名 报价人姓名"
+        },
+        "offerSerialNo": {
+          "type": "string",
+          "description": "债券报价唯一编号"
+        },
+        "offerTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "报价时间"
+        },
+        "ofr": {
+          "type": "number",
+          "description": "ofr 卖盘价"
+        },
+        "relatedStrenth": {
+          "type": "string",
+          "description": "潜在强度描述"
+        },
+        "score": {
+          "type": "number",
+          "description": "评分"
+        },
+        "similarOfferSerialNo": {
+          "type": "string",
+          "description": "相似债券报价唯一编号"
+        }
+      },
+      "title": "BmBondOfferSimilarVo"
+    },
+    "BmBondPriceForecastDetailQueryRequest": {
+      "type": "object",
+      "properties": {
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        }
+      },
+      "title": "BmBondPriceForecastDetailQueryRequest"
+    },
+    "BmBondPriceForecastVo": {
+      "type": "object",
+      "properties": {
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "forecastBid": {
+          "type": "number",
+          "description": "预测bid"
+        },
+        "forecastDealPrice": {
+          "type": "number",
+          "description": "预测成交价"
+        },
+        "forecastOfr": {
+          "type": "number",
+          "description": "预测ofr"
+        },
+        "newestBid": {
+          "type": "number",
+          "description": "最新bid"
+        },
+        "newestOfr": {
+          "type": "number",
+          "description": "最新ofr"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "债券价格唯一编号"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "更新时间"
+        }
+      },
+      "title": "BmBondPriceForecastVo"
+    },
+    "BmBondTmpVo": {
+      "type": "object",
+      "properties": {
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        }
+      },
+      "title": "BmBondTmpVo"
+    },
+    "BmCustomerCompanyVo": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "机构地址"
+        },
+        "contactPerson": {
+          "type": "string",
+          "description": "负责人"
+        },
+        "deptList": {
+          "type": "array",
+          "description": "部门列表",
+          "items": {
+            "originalRef": "BmCustomerDeptVo",
+            "$ref": "#/definitions/BmCustomerDeptVo"
+          }
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "name": {
+          "type": "string",
+          "description": "机构名称"
+        },
+        "postCode": {
+          "type": "string",
+          "description": "机构邮编"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        },
+        "telephone": {
+          "type": "string",
+          "description": "联系电话"
+        },
+        "totalOfferCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计报价（次）"
+        },
+        "totalTradeAmt": {
+          "type": "number",
+          "description": "累计交易金额"
+        },
+        "totalTradeCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计交易（笔）"
+        },
+        "type": {
+          "type": "string",
+          "description": "机构类型"
+        }
+      },
+      "title": "BmCustomerCompanyVo"
+    },
+    "BmCustomerDeptVo": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "地址"
+        },
+        "companySerialNo": {
+          "type": "string",
+          "description": "公司编号"
+        },
+        "contactPerson": {
+          "type": "string",
+          "description": "负责人"
+        },
+        "custCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门人数"
+        },
+        "custList": {
+          "type": "array",
+          "description": "部门人员",
+          "items": {
+            "originalRef": "BmCustomerVo",
+            "$ref": "#/definitions/BmCustomerVo"
+          }
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "主键"
+        },
+        "name": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int32",
+          "description": "上级部门主键，空表示没有上级部门"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        },
+        "telephone": {
+          "type": "string",
+          "description": "电话"
+        },
+        "totalOfferCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计报价（次）"
+        },
+        "totalTradeAmt": {
+          "type": "number",
+          "description": "累计交易金额"
+        },
+        "totalTradeCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计交易（笔）"
+        }
+      },
+      "title": "BmCustomerDeptVo"
+    },
+    "BmCustomerInterestQuoteVo": {
+      "type": "object",
+      "properties": {
+        "bid": {
+          "type": "number",
+          "description": "买盘价"
+        },
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "bondRating": {
+          "type": "string",
+          "description": "债券评级"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "broker": {
+          "type": "string",
+          "description": "broker"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "机构名称"
+        },
+        "companySerialNo": {
+          "type": "string",
+          "description": "机构编号"
+        },
+        "custSerialNo": {
+          "type": "string",
+          "description": "客户编号"
+        },
+        "deptSerialNo": {
+          "type": "string",
+          "description": "部门编号"
+        },
+        "name": {
+          "type": "string",
+          "description": "客户姓名"
+        },
+        "offerCustSerialNo": {
+          "type": "string",
+          "description": "债券报价客户编号"
+        },
+        "offerSerialNo": {
+          "type": "string",
+          "description": "债券报价唯一编号"
+        },
+        "offerTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "报价时间"
+        },
+        "ofr": {
+          "type": "number",
+          "description": "卖盘价"
+        },
+        "relatedStrenth": {
+          "type": "string",
+          "description": "潜在强度描述"
+        },
+        "score": {
+          "type": "number",
+          "description": "评分"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        }
+      },
+      "title": "BmCustomerInterestQuoteVo"
+    },
+    "BmCustomerPageListQueryRequest": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "custSerialNo": {
+          "type": "string",
+          "description": "客户编号"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "BmCustomerPageListQueryRequest"
+    },
+    "BmCustomerTasteBondCompanyRatingSpaceChartVo": {
+      "type": "object",
+      "properties": {
+        "bondCompanyRating": {
+          "type": "string",
+          "description": "债券主体评级"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        },
+        "tradeCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "交易次数"
+        }
+      },
+      "title": "BmCustomerTasteBondCompanyRatingSpaceChartVo"
+    },
+    "BmCustomerTasteBondTypeSpaceChartVo": {
+      "type": "object",
+      "properties": {
+        "bondType": {
+          "type": "string",
+          "description": "债券种类-编码"
+        },
+        "bondTypeName": {
+          "type": "string",
+          "description": "债券种类-名称"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        },
+        "tradeCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "交易次数"
+        }
+      },
+      "title": "BmCustomerTasteBondTypeSpaceChartVo"
+    },
+    "BmCustomerTasteChartQueryRequest": {
+      "type": "object",
+      "properties": {
+        "custSerialNo": {
+          "type": "string",
+          "description": "客户编号"
+        }
+      },
+      "title": "BmCustomerTasteChartQueryRequest"
+    },
+    "BmCustomerTasteChartVo": {
+      "type": "object",
+      "properties": {
+        "bondCompanyRating": {
+          "type": "string",
+          "description": "债券主体评级"
+        },
+        "bondType": {
+          "type": "string",
+          "description": "债券种类-编码"
+        },
+        "bondTypeName": {
+          "type": "string",
+          "description": "债券种类-名称"
+        },
+        "earningRate": {
+          "type": "string",
+          "description": "收益率"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        }
+      },
+      "title": "BmCustomerTasteChartVo"
+    },
+    "BmCustomerTasteDurationSpaceChartVo": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "string",
+          "description": "久期"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        },
+        "tradeCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "交易次数"
+        }
+      },
+      "title": "BmCustomerTasteDurationSpaceChartVo"
+    },
+    "BmCustomerTasteEarningRateSpaceChartVo": {
+      "type": "object",
+      "properties": {
+        "earningRate": {
+          "type": "number",
+          "description": "收益率"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        },
+        "tradeCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "交易次数"
+        }
+      },
+      "title": "BmCustomerTasteEarningRateSpaceChartVo"
+    },
+    "BmCustomerTasteScatterChartVo": {
+      "type": "object",
+      "properties": {
+        "serial0": {
+          "type": "array",
+          "description": "当天客户散点图数据",
+          "items": {
+            "originalRef": "BmCustomerTasteChartVo",
+            "$ref": "#/definitions/BmCustomerTasteChartVo"
+          }
+        },
+        "serial1": {
+          "type": "array",
+          "description": "同类客户基准数据",
+          "items": {
+            "originalRef": "BmCustomerTasteChartVo",
+            "$ref": "#/definitions/BmCustomerTasteChartVo"
+          }
+        }
+      },
+      "title": "BmCustomerTasteScatterChartVo"
+    },
+    "BmCustomerTasteSpaceChartVo": {
+      "type": "object",
+      "properties": {
+        "bondCompanyRatingSpaceChartVo": {
+          "type": "array",
+          "description": "单轴散点图-债券主体评级",
+          "items": {
+            "originalRef": "BmCustomerTasteBondCompanyRatingSpaceChartVo",
+            "$ref": "#/definitions/BmCustomerTasteBondCompanyRatingSpaceChartVo"
+          }
+        },
+        "bondTypeSpaceChartVo": {
+          "type": "array",
+          "description": "单轴散点图-债券种类",
+          "items": {
+            "originalRef": "BmCustomerTasteBondTypeSpaceChartVo",
+            "$ref": "#/definitions/BmCustomerTasteBondTypeSpaceChartVo"
+          }
+        },
+        "durationSpaceChartVo": {
+          "type": "array",
+          "description": "单轴散点图-久期",
+          "items": {
+            "originalRef": "BmCustomerTasteDurationSpaceChartVo",
+            "$ref": "#/definitions/BmCustomerTasteDurationSpaceChartVo"
+          }
+        },
+        "earningRateSpaceChartVo": {
+          "type": "array",
+          "description": "单轴散点图-收益率",
+          "items": {
+            "originalRef": "BmCustomerTasteEarningRateSpaceChartVo",
+            "$ref": "#/definitions/BmCustomerTasteEarningRateSpaceChartVo"
+          }
+        }
+      },
+      "title": "BmCustomerTasteSpaceChartVo"
+    },
+    "BmCustomerTasteVo": {
+      "type": "object",
+      "properties": {
+        "bondRating": {
+          "type": "array",
+          "description": "债券评级",
+          "items": {
+            "originalRef": "TasteItem",
+            "$ref": "#/definitions/TasteItem"
+          }
+        },
+        "bondType": {
+          "type": "array",
+          "description": "债券类别",
+          "items": {
+            "originalRef": "TasteItem",
+            "$ref": "#/definitions/TasteItem"
+          }
+        },
+        "duration": {
+          "type": "array",
+          "description": "久期",
+          "items": {
+            "originalRef": "TasteItem",
+            "$ref": "#/definitions/TasteItem"
+          }
+        },
+        "earningRate": {
+          "type": "array",
+          "description": "收益率",
+          "items": {
+            "originalRef": "TasteItem",
+            "$ref": "#/definitions/TasteItem"
+          }
+        },
+        "yyScore": {
+          "type": "array",
+          "description": "YY评分",
+          "items": {
+            "originalRef": "TasteItem",
+            "$ref": "#/definitions/TasteItem"
+          }
+        }
+      },
+      "title": "BmCustomerTasteVo"
+    },
+    "BmCustomerTradeInfoQueryRequest": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "beginTradeTime": {
+          "type": "string",
+          "description": "查询起始交易日期yyyy-MM-dd"
+        },
+        "custSerialNo": {
+          "type": "string",
+          "description": "客户编号"
+        },
+        "endTradeTime": {
+          "type": "string",
+          "description": "查询截止交易日期yyyy-MM-dd"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "BmCustomerTradeInfoQueryRequest"
+    },
+    "BmCustomerTradeInfoVo": {
+      "type": "object",
+      "properties": {
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "bondRating": {
+          "type": "string",
+          "description": "债券评级"
+        },
+        "bondShortName": {
+          "type": "string",
+          "description": "债券简称"
+        },
+        "bondType": {
+          "type": "string",
+          "description": "债券种类-编码"
+        },
+        "bondTypeName": {
+          "type": "string",
+          "description": "债券种类-名称"
+        },
+        "broker": {
+          "type": "string",
+          "description": "中介交易员-名称"
+        },
+        "companyRating": {
+          "type": "string",
+          "description": "主体评级"
+        },
+        "earningRate": {
+          "type": "number",
+          "description": "收益率"
+        },
+        "leftDuration": {
+          "type": "string",
+          "description": "剩余久期"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "债券交易唯一编号"
+        },
+        "tradeTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "交易时间"
+        }
+      },
+      "title": "BmCustomerTradeInfoVo"
+    },
+    "BmCustomerVo": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "地址"
+        },
+        "birthday": {
+          "type": "string",
+          "description": "生日"
+        },
+        "companySerialNo": {
+          "type": "string",
+          "description": "公司编号"
+        },
+        "deptSerialNo": {
+          "type": "string",
+          "description": "部门编号"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "name": {
+          "type": "string",
+          "description": "姓名"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话"
+        },
+        "qq": {
+          "type": "string",
+          "description": "QQ号"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "显示唯一编号"
+        },
+        "sex": {
+          "type": "string",
+          "description": "性别 0未知的性别、1男性、2女性、9其他"
+        },
+        "sexName": {
+          "type": "string"
+        },
+        "totalOfferCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计报价（次）"
+        },
+        "totalTradeAmt": {
+          "type": "number",
+          "description": "累计交易金额"
+        },
+        "totalTradeCnt": {
+          "type": "integer",
+          "format": "int64",
+          "description": "累计交易（笔）"
+        },
+        "wxid": {
+          "type": "string",
+          "description": "微信号"
+        }
+      },
+      "title": "BmCustomerVo"
+    },
+    "BmPushPolicyCreateVo": {
+      "type": "object",
+      "properties": {
+        "pushMethod": {
+          "type": "array",
+          "description": "推送方式，其中methond的取值00自动,01半自动,02全手动。[{\"method\":\"00\",\"scoreMin\":8.5,\"scoreMax\":10.0,\"cronExpression\":\"0 0 0 1\",\"cronExpressionDesc\":\"\"},{\"method\":\"01\",\"scoreMin\":4.0,\"scoreMax\":8.5},{\"method\":\"02\",\"scoreMin\":0,\"scoreMax\":4.0}]",
+          "items": {
+            "originalRef": "Push Method封装对象",
+            "$ref": "#/definitions/Push Method封装对象"
+          }
+        },
+        "pushStyle": {
+          "type": "string",
+          "description": "推送风格。00积极,01适中,02冷静,03自定义"
+        }
+      },
+      "title": "BmPushPolicyCreateVo"
+    },
+    "BmPushRcdCreateVo": {
+      "type": "object",
+      "properties": {
+        "customers": {
+          "type": "array",
+          "description": "潜在客户",
+          "items": {
+            "originalRef": "PushCustomerVo",
+            "$ref": "#/definitions/PushCustomerVo"
+          }
+        },
+        "infoList": {
+          "type": "array",
+          "description": "推荐舆情/资讯",
+          "items": {
+            "originalRef": "PushInfoVo",
+            "$ref": "#/definitions/PushInfoVo"
+          }
+        },
+        "otherBonds": {
+          "type": "array",
+          "description": "推荐/其他债券",
+          "items": {
+            "originalRef": "PushBondVo",
+            "$ref": "#/definitions/PushBondVo"
+          }
+        },
+        "targetBonds": {
+          "type": "array",
+          "description": "标的债券",
+          "items": {
+            "originalRef": "PushBondVo",
+            "$ref": "#/definitions/PushBondVo"
+          }
+        }
+      },
+      "title": "BmPushRcdCreateVo"
+    },
+    "BmPushRcdListQueryRequest": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "createTimeBegin": {
+          "type": "string",
+          "format": "date",
+          "description": "推送时间起"
+        },
+        "createTimeEnd": {
+          "type": "string",
+          "format": "date",
+          "description": "推送时间止"
+        },
+        "customer": {
+          "type": "string",
+          "description": "客户姓名"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "pushStatus": {
+          "type": "string",
+          "description": "推送状态"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "BmPushRcdListQueryRequest"
+    },
+    "CrSelectParmBo": {
+      "type": "object",
+      "properties": {
+        "appcode": {
+          "type": "string"
+        },
+        "apptype": {
+          "type": "string"
+        },
+        "poption": {
+          "type": "string"
+        },
+        "ptype": {
+          "type": "string"
+        },
+        "pvalue": {
+          "type": "string"
+        },
+        "useFlag": {
+          "type": "string"
+        }
+      },
+      "title": "CrSelectParmBo"
+    },
+    "DubboPage«BmBondNewsResultVo»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmBondNewsResultVo",
+            "$ref": "#/definitions/BmBondNewsResultVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«BmBondNewsResultVo»"
+    },
+    "DubboPage«BmBondOfferCustomerRelaVo»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmBondOfferCustomerRelaVo",
+            "$ref": "#/definitions/BmBondOfferCustomerRelaVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«BmBondOfferCustomerRelaVo»"
+    },
+    "DubboPage«BmBondOfferInfoVo»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmBondOfferInfoVo",
+            "$ref": "#/definitions/BmBondOfferInfoVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«BmBondOfferInfoVo»"
+    },
+    "DubboPage«BmBondOfferSimilarVo»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmBondOfferSimilarVo",
+            "$ref": "#/definitions/BmBondOfferSimilarVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«BmBondOfferSimilarVo»"
+    },
+    "DubboPage«BmCustomerInterestQuoteVo»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmCustomerInterestQuoteVo",
+            "$ref": "#/definitions/BmCustomerInterestQuoteVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«BmCustomerInterestQuoteVo»"
+    },
+    "DubboPage«BmCustomerTradeInfoVo»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmCustomerTradeInfoVo",
+            "$ref": "#/definitions/BmCustomerTradeInfoVo"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«BmCustomerTradeInfoVo»"
+    },
+    "DubboPage«Map«string,object»»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "Map«string,object»",
+            "$ref": "#/definitions/Map«string,object»"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«Map«string,object»»"
+    },
+    "DubboPage«推送消息列表»": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "originalRef": "推送消息列表",
+            "$ref": "#/definitions/推送消息列表"
+          }
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sorter": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "totalElements": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPages": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DubboPage«推送消息列表»"
+    },
+    "Item": {
+      "type": "object",
+      "required": ["price", "priceTime"],
+      "properties": {
+        "price": {
+          "type": "number",
+          "description": "报价"
+        },
+        "priceTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "报价时间"
+        }
+      },
+      "title": "Item"
+    },
+    "Map«string,object»": {
+      "type": "object",
+      "title": "Map«string,object»",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "Push Method封装对象": {
+      "type": "object",
+      "properties": {
+        "cronExpression": {
+          "type": "string",
+          "description": "自动推送任务的cron表达式"
+        },
+        "cronExpressionDesc": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "description": "00自动,01半自动,02全手动"
+        },
+        "scoreMax": {
+          "type": "number",
+          "format": "double",
+          "description": "不包括大值"
+        },
+        "scoreMin": {
+          "type": "number",
+          "format": "double",
+          "description": "包括小值"
+        }
+      },
+      "title": "Push Method封装对象"
+    },
+    "PushBondVo": {
+      "type": "object",
+      "properties": {
+        "bid": {
+          "type": "number",
+          "format": "double"
+        },
+        "bondCode": {
+          "type": "string"
+        },
+        "bondRating": {
+          "type": "string"
+        },
+        "bondShortName": {
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "companySerialNo": {
+          "type": "string"
+        },
+        "custSerialNo": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "offerTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ofr": {
+          "type": "number",
+          "format": "double"
+        },
+        "pushMethod": {
+          "type": "string"
+        },
+        "pushStyle": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "PushBondVo"
+    },
+    "PushCustomerVo": {
+      "type": "object",
+      "properties": {
+        "companyName": {
+          "type": "string"
+        },
+        "companySerialNo": {
+          "type": "string"
+        },
+        "custSerialNo": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "pushMethod": {
+          "type": "string"
+        },
+        "pushStyle": {
+          "type": "string"
+        },
+        "targetBondBid": {
+          "type": "number",
+          "format": "double"
+        },
+        "targetBondOfferTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "targetBondOfr": {
+          "type": "number",
+          "format": "double"
+        },
+        "targetBondReason": {
+          "type": "string"
+        },
+        "targetBondScore": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "PushCustomerVo"
+    },
+    "PushInfoVo": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "offerTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "title": "PushInfoVo"
+    },
+    "ResponseVo": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo"
+    },
+    "ResponseVo«BmBondBasicInfoVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmBondBasicInfoVo",
+          "$ref": "#/definitions/BmBondBasicInfoVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmBondBasicInfoVo»"
+    },
+    "ResponseVo«BmBondBestPriceChartVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmBondBestPriceChartVo",
+          "$ref": "#/definitions/BmBondBestPriceChartVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmBondBestPriceChartVo»"
+    },
+    "ResponseVo«BmBondCompanyInfoVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmBondCompanyInfoVo",
+          "$ref": "#/definitions/BmBondCompanyInfoVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmBondCompanyInfoVo»"
+    },
+    "ResponseVo«BmBondPriceForecastVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmBondPriceForecastVo",
+          "$ref": "#/definitions/BmBondPriceForecastVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmBondPriceForecastVo»"
+    },
+    "ResponseVo«BmCustomerCompanyVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmCustomerCompanyVo",
+          "$ref": "#/definitions/BmCustomerCompanyVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmCustomerCompanyVo»"
+    },
+    "ResponseVo«BmCustomerDeptVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmCustomerDeptVo",
+          "$ref": "#/definitions/BmCustomerDeptVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmCustomerDeptVo»"
+    },
+    "ResponseVo«BmCustomerTasteScatterChartVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmCustomerTasteScatterChartVo",
+          "$ref": "#/definitions/BmCustomerTasteScatterChartVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmCustomerTasteScatterChartVo»"
+    },
+    "ResponseVo«BmCustomerTasteSpaceChartVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmCustomerTasteSpaceChartVo",
+          "$ref": "#/definitions/BmCustomerTasteSpaceChartVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmCustomerTasteSpaceChartVo»"
+    },
+    "ResponseVo«BmCustomerTasteVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmCustomerTasteVo",
+          "$ref": "#/definitions/BmCustomerTasteVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmCustomerTasteVo»"
+    },
+    "ResponseVo«BmCustomerVo»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "BmCustomerVo",
+          "$ref": "#/definitions/BmCustomerVo"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«BmCustomerVo»"
+    },
+    "ResponseVo«DubboPage«BmBondNewsResultVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«BmBondNewsResultVo»",
+          "$ref": "#/definitions/DubboPage«BmBondNewsResultVo»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«BmBondNewsResultVo»»"
+    },
+    "ResponseVo«DubboPage«BmBondOfferCustomerRelaVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«BmBondOfferCustomerRelaVo»",
+          "$ref": "#/definitions/DubboPage«BmBondOfferCustomerRelaVo»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«BmBondOfferCustomerRelaVo»»"
+    },
+    "ResponseVo«DubboPage«BmBondOfferInfoVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«BmBondOfferInfoVo»",
+          "$ref": "#/definitions/DubboPage«BmBondOfferInfoVo»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«BmBondOfferInfoVo»»"
+    },
+    "ResponseVo«DubboPage«BmBondOfferSimilarVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«BmBondOfferSimilarVo»",
+          "$ref": "#/definitions/DubboPage«BmBondOfferSimilarVo»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«BmBondOfferSimilarVo»»"
+    },
+    "ResponseVo«DubboPage«BmCustomerInterestQuoteVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«BmCustomerInterestQuoteVo»",
+          "$ref": "#/definitions/DubboPage«BmCustomerInterestQuoteVo»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«BmCustomerInterestQuoteVo»»"
+    },
+    "ResponseVo«DubboPage«BmCustomerTradeInfoVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«BmCustomerTradeInfoVo»",
+          "$ref": "#/definitions/DubboPage«BmCustomerTradeInfoVo»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«BmCustomerTradeInfoVo»»"
+    },
+    "ResponseVo«DubboPage«Map«string,object»»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«Map«string,object»»",
+          "$ref": "#/definitions/DubboPage«Map«string,object»»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«Map«string,object»»»"
+    },
+    "ResponseVo«DubboPage«推送消息列表»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "originalRef": "DubboPage«推送消息列表»",
+          "$ref": "#/definitions/DubboPage«推送消息列表»"
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«DubboPage«推送消息列表»»"
+    },
+    "ResponseVo«List«BmCustomerCompanyVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmCustomerCompanyVo",
+            "$ref": "#/definitions/BmCustomerCompanyVo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«List«BmCustomerCompanyVo»»"
+    },
+    "ResponseVo«List«BmCustomerDeptVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmCustomerDeptVo",
+            "$ref": "#/definitions/BmCustomerDeptVo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«List«BmCustomerDeptVo»»"
+    },
+    "ResponseVo«List«BmCustomerVo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "BmCustomerVo",
+            "$ref": "#/definitions/BmCustomerVo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«List«BmCustomerVo»»"
+    },
+    "ResponseVo«List«CrSelectParmBo»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "CrSelectParmBo",
+            "$ref": "#/definitions/CrSelectParmBo"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«List«CrSelectParmBo»»"
+    },
+    "ResponseVo«List«债券推荐策略»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "债券推荐策略",
+            "$ref": "#/definitions/债券推荐策略"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«List«债券推荐策略»»"
+    },
+    "ResponseVo«List«推送结果列表»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "originalRef": "推送结果列表",
+            "$ref": "#/definitions/推送结果列表"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "ResponseVo«List«推送结果列表»»"
+    },
+    "TasteItem": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "type": "string",
+          "description": "口味项"
+        },
+        "kind": {
+          "type": "string",
+          "description": "口味类别 bondRating债券评级、 bondType债券类别、 earningRate收益率、 duration久期、 yyScoreYY评分"
+        },
+        "level": {
+          "type": "string",
+          "description": "口味等级 00无、01低、02中、03高"
+        }
+      },
+      "title": "TasteItem"
+    },
+    "债券推荐策略": {
+      "type": "object",
+      "properties": {
+        "isActive": {
+          "type": "string",
+          "description": "使用中标示，1标示使用中"
+        },
+        "pushMethod": {
+          "type": "array",
+          "description": "推送方式，其中methond的取值00自动,01半自动,02全手动。[{\"method\":\"00\",\"scoreMin\":8.5,\"scoreMax\":10.0,\"cronExpression\":\"0 0 0 1\",\"cronExpressionDesc\":\"\"},{\"method\":\"01\",\"scoreMin\":4.0,\"scoreMax\":8.5},{\"method\":\"02\",\"scoreMin\":0,\"scoreMax\":4.0}]",
+          "items": {
+            "originalRef": "Push Method封装对象",
+            "$ref": "#/definitions/Push Method封装对象"
+          }
+        },
+        "pushStyle": {
+          "type": "string",
+          "description": "推送风格。00积极,01适中,02冷静,03自定义"
+        },
+        "pushStyleName": {
+          "type": "string"
+        },
+        "serialNo": {
+          "type": "string",
+          "description": "编号"
+        }
+      },
+      "title": "债券推荐策略"
+    },
+    "推送消息列表": {
+      "type": "object",
+      "properties": {
+        "company": {
+          "type": "string",
+          "description": "推送机构编号"
+        },
+        "companyAmount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "推送机构数"
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "推送时间"
+        },
+        "customer": {
+          "type": "string",
+          "description": "推送对象（机构-客户）"
+        },
+        "customerAmount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "推送客户数"
+        },
+        "pushSerialNo": {
+          "type": "string",
+          "description": "推送编号"
+        },
+        "pushStatus": {
+          "type": "string",
+          "description": "推送状态。00未推送、01推送成功、02推送失败"
+        },
+        "pushStatusName": {
+          "type": "string",
+          "description": "推送状态。00未推送、01推送成功、02推送失败"
+        }
+      },
+      "title": "推送消息列表"
+    },
+    "推送结果列表": {
+      "type": "object",
+      "properties": {
+        "bid": {
+          "type": "number",
+          "format": "double"
+        },
+        "bondCode": {
+          "type": "string"
+        },
+        "bondRating": {
+          "type": "string"
+        },
+        "bondShortName": {
+          "type": "string"
+        },
+        "broker": {
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "companySerialNo": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "custSerialNo": {
+          "type": "string"
+        },
+        "isTargetBond": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "offerTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ofr": {
+          "type": "number",
+          "format": "double"
+        },
+        "pushMethod": {
+          "type": "string"
+        },
+        "pushMethodName": {
+          "type": "string"
+        },
+        "pushSerialNo": {
+          "type": "string"
+        },
+        "pushStyle": {
+          "type": "string"
+        },
+        "pushStyleName": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        },
+        "serialNo": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "typeName": {
+          "type": "string"
+        }
+      },
+      "title": "推送结果列表"
+    },
+    "查询条件关系：或": {
+      "type": "object",
+      "required": ["page", "size"],
+      "properties": {
+        "bondCode": {
+          "type": "string",
+          "description": "债券代码"
+        },
+        "certNo": {
+          "type": "string",
+          "description": "公司统一信用代码"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "公司名称-模糊"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32",
+          "description": "当前页码"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32",
+          "description": "每页数量"
+        },
+        "sorter": {
+          "type": "object",
+          "example": {
+            "field1": "DESC",
+            "field2": "ASC"
+          },
+          "description": "排序",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "查询条件关系：或"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "react-dnd-for-grid",
+  "version": "1.0.0",
+  "description": "react dnd grid",
+  "keywords": [
+    "react-dnd-grid"
+  ],
+  "author": "shiyun <shiyun@chinacsci.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/react-dnd-grid.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:waibaoprj/learn.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/react-dnd-grid.test.js"
+  },
+  "dependencies": {
+    "object-hash": "^3.0.0",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/object-hash": "^3.0.2",
+    "@types/react-beautiful-dnd": "^13.1.3",
+    "@types/uuid": "^9.0.0"
+  },
+  "gitHead": "2920983b24a1be51f0e64500a6fb639277f41ee0"
+}

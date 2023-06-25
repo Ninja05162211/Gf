@@ -1,0 +1,38 @@
+{
+  "name": "lgasynccomponents",
+  "version": "0.1.5",
+  "description": "lgasynccomponents",
+  "main": "index.js",
+  "module": "lib/asynccomponents.cjs.prod.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lib"
+  ],
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitee.com/create_prj/lerna.git"
+  },
+  "keywords": [
+    "index"
+  ],
+  "author": "lego",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitee.com/create_prj/lerna/issues"
+  },
+  "dependencies": {
+    "antd": "^3.24.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/antd": "^1.0.0",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@types/styled-components": "^4.1.19"
+  },
+  "gitHead": "bf58024106264fc6f2e7875febb57e7324daed3f"
+}

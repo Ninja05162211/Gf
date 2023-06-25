@@ -1,0 +1,113 @@
+{
+  "setting": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "id=141",
+          "scene": null
+        },
+        {
+          "name": "pages/gocash/gocash",
+          "pathName": "pages/gocash/gocash",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/realname/realname",
+          "pathName": "pages/realname/realname",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/realname/realname",
+          "pathName": "pages/realname/realname",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "id=182",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/list/list",
+          "pathName": "pages/list/list",
+          "query": "categoryid=3&categoryname=国内短线",
+          "scene": null
+        },
+        {
+          "name": "pages/myorder/myorder",
+          "pathName": "pages/myorder/myorder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myorderdetail/myorderdetail",
+          "pathName": "pages/myorderdetail/myorderdetail",
+          "query": "id=157",
+          "scene": null
+        },
+        {
+          "name": "pages/address/address",
+          "pathName": "pages/address/address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addtraveller/addtraveller",
+          "pathName": "pages/addtraveller/addtraveller",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/vipbuy/vipbuy",
+          "pathName": "pages/vipbuy/vipbuy",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mycoupon/mycoupon",
+          "pathName": "pages/mycoupon/mycoupon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/activitypage/activitypage",
+          "pathName": "pages/activitypage/activitypage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/active2/active2",
+          "pathName": "pages/active2/active2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/contact/contact",
+          "pathName": "pages/contact/contact",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "2.24.2"
+}

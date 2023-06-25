@@ -1,0 +1,186 @@
+{
+  "name": "bondtrade",
+  "version": "0.0.2",
+  "private": true,
+  "main": "build/electron.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "vite --mode base",
+    "build:test": "vite build --mode test",
+    "build:web": "vite build --mode production",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --win --x64",
+    "build:mac": "electron-builder --mac",
+    "dev": "concurrently -k \"BROWSER=none pnpm start\" \"pnpm electron\"",
+    "lint:format": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,vue,html,md}\"",
+    "clean:cache": "npx rimraf node_modules/.cache",
+    "electron": "wait-on tcp:9528 && electron ."
+  },
+  "eslintConfig": {
+    "extends": []
+  },
+  "build": {
+    "productName": "electron桌面端",
+    "appId": "com.demo.electron",
+    "copyright": "© demo",
+    "directories": {
+      "buildResources": "public",
+      "output": "out"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "public/favicon.ico",
+      "installerHeaderIcon": "public/favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "build/**/*",
+      "public/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "icon": "./public/favicon.png",
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    },
+    "win": {
+      "icon": "./public/favicon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@ant-design/pro-card": "^1.19.0",
+    "@ant-design/pro-descriptions": "^1.10.0",
+    "@ant-design/pro-form": "^1.64.0",
+    "@ant-design/pro-layout": "^6.35.0",
+    "@ant-design/pro-table": "^2.71.0",
+    "@umijs/route-utils": "^2.0.0",
+    "antd": "^4.19.0",
+    "classnames": "^2.3.0",
+    "lodash": "^4.17.0",
+    "moment": "^2.29.0",
+    "omit.js": "^2.0.2",
+    "rc-menu": "^9.1.0",
+    "rc-util": "^5.16.0",
+    "react": "^17.0.0",
+    "react-dev-inspector": "^1.7.0",
+    "react-dom": "^17.0.0",
+    "react-helmet-async": "^1.2.0",
+    "umi": "^3.5.0",
+    "animate.css": "^4.1.1",
+    "axios": "^0.26.1",
+    "clipboard": "^2.0.10",
+    "echarts-wordcloud": "^2.0.0",
+    "electron-is-dev": "^2.0.0",
+    "element-plus": "2.1.9",
+    "intro.js": "^5.1.0",
+    "js-md5": "^0.7.3",
+    "lgutils": "^1.3.3",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.0",
+    "mockjs": "^1.1.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.13",
+    "pinia-plugin-persist": "^1.0.0",
+    "qrcode": "^1.5.0",
+    "qs": "^6.10.3",
+    "swiper": "^8.0.7",
+    "web-storage-cache": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/nprogress": "^0.2.0",
+    "@types/qs": "^6.9.7",
+    "@ant-design/pro-cli": "^2.1.0",
+    "@playwright/test": "^1.17.0",
+    "@types/express": "^4.17.0",
+    "@types/history": "^4.7.0",
+    "@types/jest": "^26.0.0",
+    "@types/lodash": "^4.14.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.0",
+    "@umijs/fabric": "^2.8.0",
+    "@umijs/openapi": "^1.3.0",
+    "@umijs/plugin-blocks": "^2.2.0",
+    "@umijs/plugin-esbuild": "^1.4.0",
+    "@umijs/plugin-openapi": "^1.3.0",
+    "@umijs/preset-ant-design-pro": "^1.3.0",
+    "@umijs/preset-dumi": "^1.1.0",
+    "@umijs/preset-react": "^1.8.17",
+    "cross-env": "^7.0.0",
+    "cross-port-killer": "^1.3.0",
+    "detect-installer": "^1.0.0",
+    "gh-pages": "^3.2.0",
+    "husky": "^7.0.4",
+    "jsdom-global": "^3.0.0",
+    "mockjs": "^1.1.0",
+    "prettier": "^2.5.0",
+    "stylelint": "^13.0.0",
+    "swagger-ui-react": "^3.52.0",
+    "umi-serve": "^1.9.10",
+    "autoprefixer": "^10.4.4",
+    "concurrently": "^7.0.0",
+    "electron": "^18.0.1",
+    "electron-builder": "^23.0.3",
+    "eslint": "^8.13.0",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "lint-staged": "^12.3.7",
+    "process": "^0.11.10",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.3",
+    "wait-on": "^6.0.1"
+  },
+  "create-umi": {
+    "ignoreScript": [
+      "docker*",
+      "functions*",
+      "site",
+      "generateMock"
+    ],
+    "ignoreDependencies": [
+      "netlify*",
+      "serverless"
+    ],
+    "ignore": [
+      ".dockerignore",
+      ".git",
+      ".github",
+      ".gitpod.yml",
+      "CODE_OF_CONDUCT.md",
+      "Dockerfile",
+      "Dockerfile.*",
+      "lambda",
+      "LICENSE",
+      "netlify.toml",
+      "README.*.md",
+      "azure-pipelines.yml",
+      "docker",
+      "CNAME",
+      "create-umi"
+    ]
+  }
+}

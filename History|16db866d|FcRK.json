@@ -1,0 +1,170 @@
+{
+  "name": "bondtrade",
+  "version": "0.0.1",
+  "private": true,
+  "main": "build/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@element-plus/icons-vue": "^1.1.4",
+    "axios": "^0.26.1",
+    "electron-is-dev": "^2.0.0",
+    "js-md5": "^0.7.3",
+    "lgutils": "^1.3.3",
+    "nprogress": "^0.2.0",
+    "qs": "^6.10.3",
+    "swiper": "^8.0.7",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.14",
+    "vuex": "4.0.2",
+    "@iconify/iconify": "^2.2.1",
+    "@vueuse/core": "^8.2.5",
+    "@wangeditor/editor": "^5.0.0",
+    "@wangeditor/editor-for-vue": "^5.1.8-7",
+    "@zxcvbn-ts/core": "^2.0.1",
+    "animate.css": "^4.1.1",
+    "echarts": "^5.3.2",
+    "echarts-wordcloud": "^2.0.0",
+    "element-plus": "2.1.9",
+    "intro.js": "^5.1.0",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.0",
+    "mockjs": "^1.1.0",
+    "pinia": "^2.0.13",
+    "pinia-plugin-persist": "^1.0.0",
+    "qrcode": "^1.5.0",
+    "vue-i18n": "9.1.9",
+    "vue-types": "^4.1.1",
+    "web-storage-cache": "^1.1.1"
+  },
+  "scripts": {
+    "start": "vite --host --mode base",
+    "build:test": "vite build --mode test",
+    "build:web": "vite build --mode production",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --win --x64",
+    "build:mac": "electron-builder --mac",
+    "dev": "concurrently -k \"BROWSER=none pnpm start\" \"pnpm electron\"",
+    "electron": "wait-on tcp:9528 && electron ."
+  },
+  "eslintConfig": {
+    "extends": []
+  },
+  "build": {
+    "productName": "electron桌面端",
+    "appId": "com.demo.electron",
+    "copyright": "© demo",
+    "directories": {
+      "buildResources": "public",
+      "output": "out"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "public/favicon.ico",
+      "installerHeaderIcon": "public/favicon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "build/**/*",
+      "public/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "icon": "./public/favicon.png",
+      "artifactName": "${productName}_setup_${version}.${ext}"
+    },
+    "win": {
+      "icon": "./public/favicon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/user-event": "^14.0.3",
+    "@types/js-md5": "^0.4.3",
+    "@types/nprogress": "^0.2.0",
+    "@vitejs/plugin-legacy": "^1.8.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/compiler-sfc": "^3.2.31",
+    "concurrently": "^7.0.0",
+    "electron": "^18.0.1",
+    "electron-builder": "^22.14.13",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "process": "^0.11.10",
+    "rollup-plugin-copy": "^3.4.0",
+    "typescript": "^4.6.3",
+    "unplugin-auto-import": "^0.7.1",
+    "unplugin-vue-components": "^0.19.2",
+    "vite": "^2.9.1",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-pwa": "^0.11.13",
+    "vite-plugin-style-import": "^2.0.0",
+    "wait-on": "^6.0.1",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@iconify/json": "^2.1.27",
+    "@intlify/vite-plugin-vue-i18n": "^3.4.0",
+    "@purge-icons/generated": "^0.8.1",
+    "@types/intro.js": "^3.0.2",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^17.0.23",
+    "@types/qrcode": "^1.4.2",
+    "@types/qs": "^6.9.7",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.9",
+    "autoprefixer": "^10.4.4",
+    "commitizen": "^4.2.4",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.6.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "plop": "^3.0.5",
+    "postcss": "^8.4.12",
+    "postcss-html": "^1.3.0",
+    "postcss-less": "^6.0.0",
+    "prettier": "^2.6.2",
+    "pretty-quick": "^3.1.3",
+    "rimraf": "^3.0.2",
+    "stylelint": "^14.6.1",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0",
+    "unplugin-vue-define-options": "^0.6.0",
+    "vite-plugin-eslint": "^1.3.0",
+    "vite-plugin-mock": "^2.9.6",
+    "vite-plugin-purge-icons": "^0.8.1",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-windicss": "^1.8.3",
+    "vue-tsc": "^0.34.5",
+    "windicss": "^3.5.1",
+    "windicss-analysis": "^0.3.5"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "chrome",
+  "request": "launch",
+  "name": "Chrome",
+  "url": "http://localhost:3000/index.html?userToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOm51bGwsIm1vZCI6ImFwaSIsIm9yZyI6ImVhYjM0NjU2MmJmZTQzMWRiOTAwMjFlN2FhZDNiODIyIiwiaXNzIjoibGMiLCJkcHQiOm51bGwsInR5cCI6bnVsbCwidGlkIjoiMDAwMSIsInVpZCI6IjI4ODc4YWMwNTkzNzRiMzg4MzYxYjBmZGRiNjU5OGE4IiwiY3luIjoi6aKG5YGl5oC76YOoIiwiZXhwIjoxNTU4MjUzNDYzLCJpYXQiOjE1NDk2MTM0NjMsImx0ZCI6ImQ2ODVmZjMwNmNhNTRiMWVhMDZiNzA3ZmIwZjU3NjU5In0.GBQfx9XWOgni7PiU6hDfVzk8VE0V6pqfTK28BxisneA#/paihao",
+  "webRoot": "${workspaceRoot}/src",
+  "sourceMaps": true,
+  "userDataDir": "${workspaceRoot}/.vscode/chrome",
+  "trace": true
+}

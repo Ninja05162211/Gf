@@ -1,0 +1,14 @@
+{
+  "name": "doc-umi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "umi-lib doc dev",
+    "build:doc": "umi-lib doc build",
+    "build": "umi-lib build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

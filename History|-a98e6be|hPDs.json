@@ -1,0 +1,9 @@
+{
+  "less.compile": {
+    "compress": true,
+    "sourceMap": false,
+    "out": false,
+    "outExt": ".css",
+    "autoprefixer": "> 5%, last 2 Chrome versions, not ie 6-8"
+  }
+}

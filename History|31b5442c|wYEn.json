@@ -1,0 +1,26 @@
+{
+  "name": "react-dnd-grid",
+  "version": "1.0.0",
+  "description": "react dnd grid",
+  "keywords": [
+    "react-dnd-grid"
+  ],
+  "author": "shiyun <shiyun@chinacsci.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/react-dnd-grid.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:waibaoprj/learn.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/react-dnd-grid.test.js"
+  }
+}
